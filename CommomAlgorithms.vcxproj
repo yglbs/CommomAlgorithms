@@ -65,10 +65,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="search.cpp" />
+    <ClCompile Include="shortestpath.cpp" />
     <ClCompile Include="sort.cpp" />
+    <ClCompile Include="str.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="search.h" />
+    <ClInclude Include="shortestpath.h" />
     <ClInclude Include="sort.h" />
+    <ClInclude Include="str.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

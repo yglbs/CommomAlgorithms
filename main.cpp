@@ -1,18 +1,18 @@
 #include <iostream>
 #include <stdlib.h>
-#include "sort.h"
 
-int main(){
-	int sequence[10];
-	RandomSequence(sequence, 10, 50);
-	for (int i = 0; i < 10; i++){
-		cout << sequence[i] << " ";
-	}
-	cout << endl;
-	HeapSort(sequence, 10);
-	for (int i = 0; i < 10; i++){
-		cout << sequence[i] << " ";
-	}
+using namespace std;
+
+ int main(){
+	 int x;
+	 x = 123;
+	 printf("%d \n", x);
+	 int y;
+	 int *addr = &y;
+	 addr++;
+	 addr++;
+	 *addr = 456;
+	 printf("%d \n", x);
 	system("pause");
 	return 0;
 }

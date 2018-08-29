@@ -9,14 +9,6 @@ void RandomSequence(int sequence[], int length, int max){
 	}
 }
 
-// 交换
-void Swap(int A[], int i, int j)
-{
-	int temp = A[i];
-	A[i] = A[j];
-	A[j] = temp;
-}
-
 // 冒泡排序
 // 分类 -------------- 内部比较排序
 // 数据结构 ---------- 数组
@@ -182,10 +174,10 @@ int Partition(int A[], int left, int right)  // 划分函数
 	{
 		if (A[i] <= pivot)              // 把小于等于基准的元素放到前一个子数组末尾
 		{
-			Swap(A, ++tail, i);
+			swap(A[++tail], A[i]);
 		}
 	}
-	Swap(A, tail + 1, right);           // 最后把基准放到前一个子数组的后边，剩下的子数组既是大于基准的子数组
+	swap(A[tail + 1], A[right]);           // 最后把基准放到前一个子数组的后边，剩下的子数组既是大于基准的子数组
 	return tail + 1;                    // 返回基准的索引
 }
 
@@ -276,7 +268,7 @@ void Heapify(int A[], int i, int size)  // 从A[i]向下进行堆调整
 		max = right_child;
 	if (max != i)
 	{
-		Swap(A, i, max);                // 把当前结点和它的最大(直接)子节点进行交换
+		swap(A[i], A[max]);                // 把当前结点和它的最大(直接)子节点进行交换
 		Heapify(A, max, size);          // 递归调用，继续从当前结点向下进行堆调整
 	}
 }
@@ -296,7 +288,21 @@ void HeapSort(int A[], int n)
 	{
 		// 将堆顶元素与堆的最后一个元素互换，并从堆中去掉最后一个元素
 		// 此处交换操作很有可能把后面元素的稳定性打乱，所以堆排序是不稳定的排序算法
-		Swap(A, 0, --heap_size);
+		swap(A[0], A[--heap_size]);
 		Heapify(A, 0, heap_size);     // 从新的堆顶元素开始向下进行堆调整，时间复杂度O(logn)
 	}
 }
+
+//int main(){
+//	int sequence[10];
+//	RandomSequence(sequence, 10, 50);
+//	for (int i = 0; i < 10; i++){
+//		cout << sequence[i] << " ";
+//	}
+//	cout << endl;
+//	HeapSort(sequence, 10);
+//	for (int i = 0; i < 10; i++){
+//		cout << sequence[i] << " ";
+//	}
+//	return 0;
+//}
